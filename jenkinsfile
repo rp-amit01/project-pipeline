@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+
+    stages {
+        
+        stage('pull-job') {
+            steps {
+                echo 'Pull Job Success !'
+            }
+        }
+        
+        stage('build-job') {
+            steps {
+                echo 'Build Job Success !'
+            }
+        }
+        
+        stage('test-job') {
+            steps {
+                echo 'Test Job Success !'
+            }
+        }
+        
+        stage('deploy-job') {
+            steps {
+                echo 'Deploy Job Success !'
+            }
+        }
+    }
+}
