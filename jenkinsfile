@@ -5,6 +5,7 @@ pipeline {
         
         stage('pull-job') {
             steps {
+                git branch: 'main', url: 'https://github.com/SanjayTomar22/EasyCRUD.git'
                 echo 'Pull Job Success !'
             }
         }
