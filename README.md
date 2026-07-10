@@ -8,7 +8,7 @@ Jenkins Configuration
 
    i. install java and maven
    
-    apt update && apt install openjdk-21-jdk && apt install maven
+    apt update && apt install openjdk-21-jdk -y && apt install maven -y 
 
       or
    
