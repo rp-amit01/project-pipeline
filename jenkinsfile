@@ -36,6 +36,11 @@ pipeline {
                       -Dsonar.host.url=http://13.211.43.92:9000 \
                       -Dsonar.token=sqp_006b1d865c037aafadee6d634209ed4201fbcb12
                     '''
+                
+                timeout(10) {
+                     waitForQualityGate abortPipeline: true, credentialsId: 'pipeline'
+                    }
+
                 echo 'Test Job Success !'
             }
         }   
