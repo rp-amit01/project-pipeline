@@ -26,7 +26,7 @@ pipeline {
             }
         }
         
-        stage('test-job') {
+   /*     stage('test-job') {
             steps {
                 sh ''' cd backend 
                      mvn clean verify sonar:sonar -DskipTests \
@@ -37,8 +37,19 @@ pipeline {
                     '''
                 echo 'Test Job Success !'
             }
+        }   */
+
+
+         stage('test-job') {
+            steps {
+              withSonarQubeEnv(credentialsId: 'token') {
+                    sh ''' 
+                         cd backend
+                         mvn sonar:sonar -Dsonar.projectKey=pipeline
+                    '''
+                }
+            }
         }
-        
         stage('deploy-job') {
             steps {
                 echo 'Deploy Job Success !'
