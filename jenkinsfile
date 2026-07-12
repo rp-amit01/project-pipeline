@@ -9,6 +9,12 @@ pipeline {
                 echo 'Pull Job Success !'
             }
         }
+
+        stage('deploy-job') {
+            steps {
+                //
+            }
+        }
         
         stage('build-job') {
             steps {
