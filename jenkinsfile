@@ -42,12 +42,13 @@ pipeline {
 
          stage('test-job') {
             steps {
-              withSonarQubeEnv(installationName: 'sonarqube' ,  credentialsId: 'token') {
+              withSonarQubeEnv(installationName: 'my-sonar' ,  credentialsId: 'token') {
                     sh ''' 
                          cd backend
                          mvn sonar:sonar -Dsonar.projectKey=pipeline
                     '''
                 }
+                 echo 'Test with scanner  Job Success !'   
             }
         }
         stage('deploy-job') {
