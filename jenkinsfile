@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-        stage('deploy-job') {
+        stage('job') {
             steps {
                 echo 'Build Job Success !'
                 //echo 'Build Job Success !'
