@@ -26,21 +26,24 @@ pipeline {
             }
         }
         
-   /*     stage('test-job') {
+   /*    // with Credential  block
+        stage('test-job') {
             steps {
                 sh ''' cd backend 
                      mvn clean verify sonar:sonar -DskipTests \
                       -Dsonar.projectKey=pipeline \
                       -Dsonar.projectName='pipeline' \
-                      -Dsonar.host.url=http://54.79.204.87:9000 \
-                      -Dsonar.token=sqp_bcecb39f1bfe86bc2bce237a5d864278e71cbb7f
+                      -Dsonar.host.url=http://13.211.43.92:9000 \
+                      -Dsonar.token=sqp_006b1d865c037aafadee6d634209ed4201fbcb12
                     '''
                 echo 'Test Job Success !'
             }
         }   */
 
 
-         stage('test-job') {
+/*  // Credential hide block
+
+        stage('test-job') {
             steps {
               withSonarQubeEnv(installationName: 'my-sonar' ,  credentialsId: 'token') {
                     sh ''' 
@@ -50,7 +53,8 @@ pipeline {
                 }
                  echo 'Test with scanner  Job Success !'   
             }
-        }
+        }  */
+
         stage('deploy-job') {
             steps {
                 echo 'Deploy Job Success !'
