@@ -55,6 +55,15 @@ pipeline {
             }
         }  */
 
+
+         stage ("Quality-Test") {
+            steps {
+                 //  timeout(10) {
+                        waitForQualityGate abortPipeline: true, credentialsId: 'pipeline'
+                   // }
+                }
+                
+        }
         stage('deploy-job') {
             steps {
                 echo 'Deploy Job Success !'
