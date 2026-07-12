@@ -42,7 +42,7 @@ pipeline {
 
          stage('test-job') {
             steps {
-              withSonarQubeEnv(credentialsId: 'token') {
+              withSonarQubeEnv(installationName: 'sonarqube' ,  credentialsId: 'token') {
                     sh ''' 
                          cd backend
                          mvn sonar:sonar -Dsonar.projectKey=pipeline
