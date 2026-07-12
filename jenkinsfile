@@ -12,8 +12,8 @@ pipeline {
 
         stage('job') {
             steps {
-               
-                //echo 'Build Job Success !'
+                 echo ' syntax Job checker  !'
+                //echo 'syntax Job checker !'
             }
         }
         
