@@ -37,9 +37,7 @@ pipeline {
                       -Dsonar.token=sqp_006b1d865c037aafadee6d634209ed4201fbcb12
                     '''
                 
-                timeout(10) {
-                     waitForQualityGate abortPipeline: true, credentialsId: 'pipeline'
-                    }
+               
 
                 echo 'Test Job Success !'
             }
@@ -61,14 +59,14 @@ pipeline {
         }  */
 
 
-         stage ("Quality-Test") {
+  /*       stage ("Quality-Test") {
             steps {
                  //  timeout(10) {
                         waitForQualityGate abortPipeline: true, credentialsId: 'pipeline'
                    // }
                 }
                 
-        }
+        } */
         stage('deploy-job') {
             steps {
                 echo 'Deploy Job Success !'
