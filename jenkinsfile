@@ -58,7 +58,14 @@ pipeline {
             }
         }  */
 
-
+   stage ("Quality-Test") {
+            steps {
+                   timeout(10) {
+                        waitForQualityGate abortPipeline: true, credentialsId: 'sonar-cred'
+                    }
+                }
+                
+        }
 
         stage('deploy-job') {
             steps {
