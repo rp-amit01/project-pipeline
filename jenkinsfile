@@ -12,7 +12,7 @@ pipeline {
 
         stage('deploy-job') {
             steps {
-                //
+                //echo 'Build Job Success !'
             }
         }
         
