@@ -29,7 +29,7 @@ pipeline {
         stage('test-job') {
             steps {
                 sh ''' cd backend 
-                     mvn clean verify sonar:sonar \
+                     mvn verify sonar:sonar \
                       -Dsonar.projectKey=pipeline \
                       -Dsonar.projectName='pipeline' \
                       -Dsonar.host.url=http://54.79.204.87:9000 \
