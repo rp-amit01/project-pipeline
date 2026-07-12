@@ -29,11 +29,11 @@ pipeline {
         stage('test-job') {
             steps {
                 sh ''' cd backend 
-                      mvn clean verify sonar:sonar \\
-                      -Dsonar.projectKey=pipeline \\
-                      -Dsonar.projectName=\'pipeline\' \\
-                      -Dsonar.host.url=http://3.107.158.32:9000 \\
-                      -Dsonar.token=sqp_829a40ae3ec9e7c6d6a0321085c84191b81c3029
+                     mvn clean verify sonar:sonar \
+                      -Dsonar.projectKey=pipeline \
+                      -Dsonar.projectName='pipeline' \
+                      -Dsonar.host.url=http://54.79.204.87:9000 \
+                      -Dsonar.token=sqp_bcecb39f1bfe86bc2bce237a5d864278e71cbb7f
                     '''
                 echo 'Test Job Success !'
             }
