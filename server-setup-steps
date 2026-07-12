@@ -33,7 +33,7 @@ sudo apt install jenkins
   
 # Install and configure Database
    
-apt install openjdk-17-jdk -y && apt install postgresql -y
+apt update && apt install openjdk-17-jdk -y && apt install postgresql -y
 systemctl start postgresql
 
 sudo -u postgres psql
